@@ -49,7 +49,7 @@ public class Main {
                 throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
 
         } else if (input.contains("-")) {
-            String[] data = input.split("--");
+            String[] data = input.split("-");
             opp = '-';
             a = Integer.parseInt(data[0]);
             b = Integer.parseInt(data[1]);
