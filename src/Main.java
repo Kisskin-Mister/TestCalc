@@ -24,14 +24,10 @@ public class Main {
             b = Integer.parseInt(data[1]);
             if (data.length > 2)
                 throw new IllegalArgumentException("Не может быть больше двух операндов");
+            if (((a > 10 || b > 10) || (a <= 0 || b <= 0)))
+                throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
 
-        } else if (input.contains("-")) {
-            String[] data = input.split("-");
-            opp = '-';
-            a = Integer.parseInt(data[0]);
-            b = Integer.parseInt(data[1]);
-            if (data.length > 2)
-                throw new IllegalArgumentException("Не может быть больше двух операндов");
+
         } else if (input.contains("*")) {
             String[] data = input.split("\\*");
             opp = '*';
@@ -39,6 +35,9 @@ public class Main {
             b = Integer.parseInt(data[1]);
             if (data.length > 2)
                 throw new IllegalArgumentException("Не может быть больше двух операндов");
+            if (((a > 10 || b > 10) || (a <= 0 || b <= 0)))
+                throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
+
         } else if (input.contains("/")) {
             String[] data = input.split("/");
             opp = '/';
@@ -46,6 +45,19 @@ public class Main {
             b = Integer.parseInt(data[1]);
             if (data.length > 2)
                 throw new IllegalArgumentException("Не может быть больше двух операндов");
+            if (((a > 10 || b > 10) || (a <= 0 || b <= 0)))
+                throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
+
+        } else if (input.contains("-")) {
+            String[] data = input.split("--");
+            opp = '-';
+            a = Integer.parseInt(data[0]);
+            b = Integer.parseInt(data[1]);
+            if (data.length > 2)
+                throw new IllegalArgumentException("Не может быть больше двух операндов");
+            if (((a > 10 || b > 10) || (a <= 0 || b <= 0)))
+                throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
+
         } else {
             throw new IllegalArgumentException("Некорректно введен оператор");
         }
@@ -58,13 +70,7 @@ public class Main {
         } else {
             result = a / b;
         }
-
-        if (!((a > 10 || b > 10) || (a <= 0 || b <= 0))) {
-            return String.valueOf(result);
-        } else {
-            throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
-        }
-
+        return String.valueOf(result);
 
     }
 }
