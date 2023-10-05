@@ -17,6 +17,8 @@ public class Main {
         int a;
         int b;
         int result;
+        if(input.startsWith("-"))
+            throw new IllegalArgumentException("Введенное число больше 10 или меньше 0");
         if (input.contains("+")) {
             String[] data = input.split("\\+");
             opp = '+';
